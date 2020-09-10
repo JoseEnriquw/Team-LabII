@@ -1,33 +1,31 @@
 #include <iostream>
 using namespace std;
-#include "participante.h"
+#include "Funciones.h"
+#include "Strucs.h"
+#include <cstdio>
+#include "ui.h"
+#include "rlutil.h"
+using namespace rlutil;
+const char *file_usuario="Archivo.dat";
 
-void cargar_usuario(){
+Campo cargar_usuario(){
     Campo reg;
-    FILE *p;
 
-    p=fopen("archivo.dat","ab");
-
-    if(p==NULL){
-        cout<<"No se pudo abrir."<<endl;
-        return;
-    }
-
-    fwrite(&reg,sizeof(Campo),1,p);
     cout << "Ingrese el ID   : " ;
     cin>>reg.ID;
     cout<< endl;
-    cout << "Ingrese el nombre   : ";
-     cin>>reg.nombres;
-     cout<< endl;
-    cout << "Ingrese el apellido : ";
-    cin>>reg.apellidos;
+    cin.ignore();
+    cout << "Nombres  : ";
+    cin.getline(reg.Nombres, 50);
+    cout<< endl;
+    cout << "Apellidos: ";
+    cin.getline(reg.Apellidos, 50);
     cout<<endl;
     cout << "Ingrese el perfil de actividad : ";
     cin>>reg.Perfil_de_actividad;
     cout<<endl;
     cout << "Ingrese la fecha de nacimiento: "<<endl;
-    reg.Fecha_de_nacimiento=cagar_fecha_de_nacimiento();
+    reg.fecha_de_nacimiento=cagar_fecha_de_nacimiento();
     cout<<"Ingrese la altura en cms: ";
     cin>>reg.Altura;
     cout<<endl;
@@ -41,8 +39,7 @@ void cargar_usuario(){
     cin>>reg.Estado;
     cout<<endl;
 
-    fclose(p);
-
+return reg;
 }
 
 Fecha cagar_fecha_de_nacimiento(){
@@ -56,61 +53,80 @@ return nac;
 }
 
 
+bool guardar_usuario(Campo reg){
+    bool grabo;
+    FILE *f;
+    f = fopen(file_usuario, "ab");
+    if (f == NULL){
+        return false;
+    }
+    grabo = fwrite(&reg, sizeof(Campo), 1, f);
+    fclose(f);
+    return grabo;
+}
+
+bool guardar_usuario(Campo reg,int pos){
+    bool grabo;
+    FILE *f;
+    f = fopen(file_usuario, "rb+");
+    if (f == NULL){
+        return false;
+    }
+    fseek(f,pos*sizeof(Campo),SEEK_SET);
+    grabo = fwrite(&reg, sizeof(Campo), 1, f);
+    fclose(f);
+    return grabo;
+}
+
+
 void mostrar_usuario(Campo reg){
-    FILE *p;
 
-    p=fopen("archivo.dat","rb");
 
-    int fread(&reg,sizeof(Campo),1,p);
+
 
     cout << "ID   : " << reg.ID << endl;
-    cout << "Nombres   : " << reg.nombres << endl;
-    cout << "Apellidos : " << reg.apellidos<< endl;
+    cout << "Apellidos: "<<reg.Apellidos<<endl;
+    cout << "Nombres  : "<<reg.Nombres<<endl;
     cout << "Perfil de actividad : " << reg.Perfil_de_actividad << endl;
     cout << "Fecha de nacimiento: ";
-    mostrar_fecha_de_nacimiento(Fecha Fecha_de_nacimiento);
+    mostrar_fecha_de_nacimiento(reg.fecha_de_nacimiento);
     cout<<" Altura: "<<reg.Altura<<endl;
     cout<<"Peso: "<<reg.Peso<<endl;
     cout<<"Apto medico: "<<reg.Apto_medico<<endl;
     cout<<"Estado: "<<reg.Estado<<endl;
 
-    fclose(p);
+
 }
 
 void mostrar_fecha_de_nacimiento(Fecha nac){
 
-    cout<<nac.día<<" / "<<nac.mes<<" / "<<nac.anio<<" / "<<endl;
+    cout<<nac.dia<<" / "<<nac.mes<<" / "<<nac.anio<<endl;
 
 }
 
-void listar_usuarios(){
-    Participante reg;
-    FILE *f;
-    int aux;
-    f = fopen("datos/participantes.dat", "rb");
-    if (f == NULL){
-        cout << "No se puede leer el archivo.";
-        return;
+void listar_todos_los_usuarios(){
+    int cant=cantidad_de_usuarios();
+
+    for(int i=0;i<cant;i++){
+
+      Campo reg=leer_Usuario(i);
+      mostrar_usuario(reg);
+      cout<<endl;
     }
-    while(fread(&reg, sizeof(Participante), 1, f)){
-        mostrar_participante(reg);
-        cout << endl;
-    }
-    fclose(f);
 }
 
 
 
-int buscar_participante(int codigo_buscado){
-    Participante reg;
+int buscar_usuario(int ID_buscado){
+    Campo reg;
     FILE *f;
     int pos=0;
-    f = fopen("datos/participantes.dat", "rb");
+    f = fopen(file_usuario, "rb");
     if (f == NULL){
         return -1;
     }
-    while(fread(&reg, sizeof(Participante), 1, f)){
-        if (codigo_buscado == reg.codigo){
+    while(fread(&reg, sizeof(Campo), 1, f)){
+        if (ID_buscado == reg.ID){
             fclose(f);
             return pos;
         }
@@ -121,20 +137,88 @@ int buscar_participante(int codigo_buscado){
 }
 
 
-bool guardar_participante(Participante reg){
-    bool grabo;
-    FILE *f;
-    f = fopen("datos/participantes.dat", "ab");
-    if (f == NULL){
-        return false;
-    }
-    grabo = fwrite(&reg, sizeof(Participante), 1, f);
-    fclose(f);
-    return grabo;
+void modificar_usuario(){
+int ID,pos;
+FILE *p;
+
+
+cout<<"Ingrese el ID del Usuario que desea modificar."<<endl;
+cin>>ID;
+
+pos=buscar_usuario(ID);
+
+if(pos>=0){
+
+    cout << endl << "Usuario a modificar: " << endl;
+        cout << "---------------------------" << endl;
+        Campo reg = leer_Usuario(pos);
+        mostrar_usuario(reg);
+        cout << endl;
+
+        cout<<" Ingrese el nuevo peso: ";
+        cin>>reg.Peso;
+        cout<<endl;
+
+        cout<<"Ingrese el nuevo Perfil de Atividad: ";
+        cin>>reg.Perfil_de_actividad;
+        cout<<endl;
+
+        cout<<"Ingrese el nuevo Apto Medico: ";
+        cin>>reg.Apto_medico;
+        cout<<endl;
+
+        bool grabo=guardar_usuario(reg,pos);
+
+       /* if (guardar_usuario(reg, pos) == true){
+            msj("Usuario guardado correctamente.", APP_FORECOLOR, APP_OKCOLOR);
+            return true;
+        }
+        else{
+            msj("El participante no se guardó correctamente.", APP_FORECOLOR, APP_ERRORCOLOR);
+            return true;
+
+        }*/
+
+}else{
+
+cout<<"No existe el participante."<<endl;
 }
 
 
+}
 
+Campo leer_Usuario(int pos){
+Campo reg;
+
+ FILE *p=fopen(file_usuario,"rb");
+if(p==NULL){
+    reg.ID==0;
+    return reg;
+}
+   fseek(p,pos*sizeof(Campo),SEEK_SET);
+  fread(&reg,sizeof(Campo),1,p);
+
+  fclose(p);
+  return reg;
+}
+
+int cantidad_de_usuarios(){
+
+  Campo reg;
+  int cant=0;
+  FILE *p;
+
+  p=fopen(file_usuario,"rb");
+
+ if (p == NULL){
+        cout << "No se puede leer el archivo.";
+        return 0;
+    }
+    while(fread(&reg, sizeof(Campo), 1, p))cant++;
+
+  return cant;
+
+}
 
 
 

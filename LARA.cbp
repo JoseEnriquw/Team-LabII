@@ -36,6 +36,9 @@
 		<Unit filename="Funciones.h" />
 		<Unit filename="Strucs.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menu.cpp" />
+		<Unit filename="ui.cpp" />
+		<Unit filename="ui.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

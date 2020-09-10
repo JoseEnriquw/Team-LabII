@@ -1,11 +1,18 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
 #include "Strucs.h"
-void cargar_usuario();
+Campo cargar_usuario();
+bool guardar_usuario(Campo);
+bool guardar_usuario(Campo,int);
 Fecha cagar_fecha_de_nacimiento();
 void mostrar_usuario(Campo);
 void mostrar_fecha_de_nacimiento(Fecha);
-void listar_usuarios();
-
-
+void listar_todos_los_usuarios();
+int buscar_usuario(int);
+bool guardar_usuario(Campo);
+void modificar_usuario();
+Campo leer_Usuario(int);
+void menu_principal();
+void menu_de_usuario();
+int cantidad_de_usuarios();
 #endif // FUNCIONES_H_INCLUDED

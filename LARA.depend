@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1599701333 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\main.cpp
+	<iostream>
+	<cstdio>
+	"Strucs.h"
+	"Funciones.h"
+	"rlutil.h"
+
+1599613661 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\strucs.h
+
+1599615014 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.h
+	"Strucs.h"
+
+1599699942 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	"Strucs.h"
+	"Funciones.h"
+	"ui.h"
+	"rlutil.h"
+
+1599701439 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.cpp
+	<iostream>
+	"Funciones.h"
+	"Strucs.h"
+	<cstdio>
+	"ui.h"
+	"rlutil.h"
+
+1599699680 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1599700482 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.h
+
+1599700482 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.cpp
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
