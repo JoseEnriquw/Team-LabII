@@ -1,17 +1,18 @@
 # depslib dependency file v1.0
-1599701333 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\main.cpp
+1600214988 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\main.cpp
 	<iostream>
 	<cstdio>
 	"Strucs.h"
 	"Funciones.h"
 	"rlutil.h"
+	<ctime>
 
-1599613661 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\strucs.h
+1600208010 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\strucs.h
 
-1599615014 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.h
+1600214282 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.h
 	"Strucs.h"
 
-1599699942 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.cpp
+1600035607 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.cpp
 	<iostream>
 	<cstdio>
 	<cstdlib>
@@ -20,15 +21,16 @@
 	"ui.h"
 	"rlutil.h"
 
-1599701439 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.cpp
+1600215909 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.cpp
 	<iostream>
 	"Funciones.h"
 	"Strucs.h"
 	<cstdio>
 	"ui.h"
+	<ctime>
 	"rlutil.h"
 
-1599699680 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\rlutil.h
+1599176855 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -42,9 +44,10 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1599700482 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.h
+1600035627 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.h
 
-1599700482 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.cpp
+1599176855 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.cpp
+	<iostream>
 	<cstring>
 	"ui.h"
 	"rlutil.h"

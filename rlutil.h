@@ -1,6 +1,3 @@
-#ifndef RLUTIL_H_INCLUDED
-#define RLUTIL_H_INCLUDED
-
 #pragma once
 /**
  * File: rlutil.h
@@ -749,5 +746,3 @@ struct CursorHider {
 
 } // namespace rlutil
 #endif
-
-#endif // RLUTIL_H_INCLUDED

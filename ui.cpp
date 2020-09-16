@@ -1,4 +1,4 @@
-/**#include <iostream>
+#include <iostream>
 using namespace std;
 #include <cstring>
 #include "ui.h"
@@ -28,7 +28,7 @@ void msj(const char *mensaje, int foreColor, int backColor, int y, Orientation o
     bar(foreColor, backColor, y, SCREEN_WIDTH);
     setColors(foreColor, backColor);
 
-    //TODO: Analizar la orientación
+    //TODO: Analizar la orientaciÃ³n
     gotoxy(1, y);
     cout << mensaje;
     cin.ignore();
@@ -54,4 +54,4 @@ void delline(int line, int foreColor, int backColor){
     }
     resetColor();
     setColors(APP_FORECOLOR, APP_BACKCOLOR);
-}*/
+}

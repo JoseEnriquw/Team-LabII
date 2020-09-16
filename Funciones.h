@@ -15,4 +15,10 @@ Campo leer_Usuario(int);
 void menu_principal();
 void menu_de_usuario();
 int cantidad_de_usuarios();
+void baja_usuario();
+void listar_usuarios_x_ID();
+bool comparar(int);
+Fecha hoy ();
+int validarfecha(Fecha,Fecha);
+int validaredad(Fecha,Fecha);
 #endif // FUNCIONES_H_INCLUDED

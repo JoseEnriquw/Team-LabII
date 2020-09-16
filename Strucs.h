@@ -5,6 +5,8 @@ int dia;
 int mes;
 int anio;
 };
+
+
 struct Campo{
     int ID;
    char Nombres[50];

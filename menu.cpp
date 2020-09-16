@@ -39,6 +39,7 @@ int opcion;
 
     break;
 
+
    case 0:
 
     break;
@@ -81,21 +82,22 @@ do{
        cout<<"Hubo un error, no se pudieron guardar los datos cargados"<<endl;
        }
    break;
-   ///Completar!!!!!!
-   //case 2:
+      modificar_usuario();
+   case 2:
 
-   /// break;
-   //case 3:
+    break;
+   case 3:
 
-    ///break;
+    break;
 
    case 4:
        listar_todos_los_usuarios();
     break;
 
    case 5:
-
+        baja_usuario();
     break;
+
    case 0:
     break;
 
