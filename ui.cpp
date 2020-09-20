@@ -24,16 +24,16 @@ void bar(int foreColor, int backColor, int y, int width){
     setColors(APP_FORECOLOR, APP_BACKCOLOR);
     resetColor();
 }
-void msj(const char *mensaje, int foreColor, int backColor, int y, Orientation o){
+void msj(const char *mensaje, int foreColor, int backColor, int y){
     bar(foreColor, backColor, y, SCREEN_WIDTH);
     setColors(foreColor, backColor);
 
     //TODO: Analizar la orientación
     gotoxy(1, y);
     cout << mensaje;
-    cin.ignore();
+    anykey();
     getch();
-    resetColor();
+
     bar(APP_FORECOLOR, APP_BACKCOLOR, y, SCREEN_WIDTH);
     setColors(APP_FORECOLOR, APP_BACKCOLOR);
 }
@@ -52,6 +52,16 @@ void delline(int line, int foreColor, int backColor){
         gotoxy(x, line);
         cout << " ";
     }
-    resetColor();
-    setColors(APP_FORECOLOR, APP_BACKCOLOR);
+
+}
+
+void msj1(const char *mensaje,int forecolor,int backcolor,int y){
+
+
+delline(y,forecolor,backcolor);
+cout<<mensaje;
+gotoxy(1,y);
+anykey();
+delline(y,APP_FORECOLOR,APP_BACKCOLOR);
+
 }

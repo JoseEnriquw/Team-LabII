@@ -7,7 +7,7 @@ int anio;
 };
 
 
-struct Campo{
+struct Usuarios{
     int ID;
    char Nombres[50];
    char Apellidos[50];
@@ -17,6 +17,17 @@ struct Campo{
     float Peso;
     bool Apto_medico;
     bool Estado;
+};
+
+struct Entrenamiento{
+int ID;
+int ID_usuarios;
+Fecha fecha_de_entrenamiento;
+int actividad;
+float calorias;
+int tiempo;
+
+
 };
 
 

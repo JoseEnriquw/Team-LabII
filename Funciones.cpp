@@ -9,17 +9,21 @@ using namespace std;
 using namespace rlutil;
 const char *file_usuario="Archivo.dat";
 
-Campo cargar_usuario(){
-    Campo reg;
 
+Usuarios cargar_usuario(){
+    Usuarios reg;
+      cls();
     char Perfil_de_actividad;
     int Apto_medico,ID;
     float altura,Peso;
+    bool seguir=true;
 
     cout << "Ingrese el ID   : " ;
     cin>>ID;
     while(ID<1 || comparar(ID)){
-    cout<<"Error al ingresar los datos, vuelva a intentarlo."<<endl;
+            delline(1,APP_FORECOLOR,APP_BACKCOLOR);
+    cout<<"Error al ingresar los datos, vuelva a intentarlo.";
+    locate(1,2);
     cout << "Ingrese el ID   : " ;
     cin>>ID;
 
@@ -31,27 +35,65 @@ Campo cargar_usuario(){
     cout << "Nombres  : ";
     cin.getline(reg.Nombres, 50);
     cout<< endl;
+    while(reg.Nombres[0]=='\0'){
+    delline(3,APP_FORECOLOR,APP_BACKCOLOR);
+    cout<<"Error al ingresar los datos, vuelva a intentarlo.";
+    locate(1,4);
+        cout << "Nombres  : ";
+    cin.getline(reg.Nombres, 50);
+    cout<< endl;
+    }
     cout << "Apellidos: ";
     cin.getline(reg.Apellidos, 50);
     cout<<endl;
+
+    while(reg.Apellidos[0]=='\0'){
+    delline(5,APP_FORECOLOR,APP_BACKCOLOR);
+   cout<<"Error al ingresar los datos, vuelva a intentarlo.";
+    locate(1,6);
+        cout << "Apellidos  : ";
+    cin.getline(reg.Apellidos, 50);
+    cout<< endl;
+    }
+
     cout << "Ingrese el perfil de actividad : ";
     cin>>Perfil_de_actividad;
-    while(Perfil_de_actividad!='A' || Perfil_de_actividad!='a' || Perfil_de_actividad!='B' || Perfil_de_actividad!='b' || Perfil_de_actividad!='c' || Perfil_de_actividad!='C'){
-          cout<<"Error al ingresar los datos, vuelva a intentarlo."<<endl;
+    while(seguir){
+            switch(Perfil_de_actividad){
+        case 'A':
+        case 'a':
+        case 'B':
+        case 'b':
+        case 'C':
+        case 'c':
+         seguir=false;
+         break;
+
+        default:
+            seguir=true;
+            break;
+
+            }
+            if(seguir){
+                    delline(7,APP_FORECOLOR,APP_BACKCOLOR);
+          cout<<"Error al ingresar los datos, vuelva a intentarlo.";
+         locate(1,8);
           cout << "Ingrese el perfil de actividad : ";
           cin>>Perfil_de_actividad;
-
+}
     }
 
     reg.Perfil_de_actividad=Perfil_de_actividad;
     cout<<endl;
-    cout << "Ingrese la fecha de nacimiento: "<<endl;
+
     reg.fecha_de_nacimiento=cagar_fecha_de_nacimiento();
     cout<<"Ingrese la altura en cms: ";
     cin>>altura;
 
     while(altura<1){
-    cout<<"Error al ingresar los datos, vuelva a intentarlo."<<endl;
+     delline(9,APP_FORECOLOR,APP_BACKCOLOR);
+    cout<<"Error al ingresar los datos, vuelva a intentarlo.";
+    locate(1,10);
     cout<<"Ingrese la altura en cms: ";
     cin>>altura;
 
@@ -63,7 +105,10 @@ Campo cargar_usuario(){
     cin>>Peso;
 
     while(Peso<1){
-    cout<<"Error al ingresar los datos, vuelva a intentarlo."<<endl;
+    delline(11,APP_FORECOLOR,APP_BACKCOLOR);
+    cout<<"Error al ingresar los datos, vuelva a intentarlo.";
+    locate(1,12);
+
     cout<<"Ingrese el Peso en kilogramos: ";
     cin>>Peso;
 
@@ -73,7 +118,9 @@ Campo cargar_usuario(){
     cout<<"Ingrese el apto medico(numero 0 o 1): ";
     cin>>Apto_medico;
     while(Apto_medico>1 || Apto_medico<0){
-    cout<<"Error al ingresar los datos, vuelva a intentarlo."<<endl;
+    delline(13,APP_FORECOLOR,APP_BACKCOLOR);
+   cout<<"Error al ingresar los datos, vuelva a intentarlo.";
+    locate(1,14);
     cout<<"Ingrese el apto medico(numero 0 o 1): ";
     cin>>Apto_medico ;
     }
@@ -87,22 +134,23 @@ return reg;
 
 Fecha cagar_fecha_de_nacimiento(){
  Fecha nac,actual;
+
  int error;
 do{
+    cout << "Ingrese la fecha de nacimiento: "<<endl;
+    cout<<"Ingrese el dia:";
     cin>>nac.dia;
-    rlutil::locate(3,1);
-    cout << "/";
-    rlutil::anykey();
-
+    cout<<endl;
+    cout<<"Ingrese el mes:";
     cin>>nac.mes;
-    rlutil::locate(6,1);
-    cout << "/";
-    rlutil::anykey();
+    cout<<endl;
+    cout<<"Ingrese el año:";
     cin>>nac.anio;
+    cout<<endl;
 
    actual=hoy();
    error=validarfecha(nac,actual);
-    cout<<error<<endl;
+
 
     switch(error){
 case 1:
@@ -111,7 +159,7 @@ case 1:
 
 case 2:
     cout<<"El mes ingresado no es valido"<<endl;
-    break
+    break;
 
     case 3:
     cout<<"El dia ingresado no es valido"<<endl;
@@ -119,10 +167,13 @@ case 2:
 
     case 4:
     cout<<"Menor de edad"<<endl;
+
     break;
     default:
         break;
     }
+    anykey();
+    cls();
 }while(error!=0);
 
 
@@ -130,33 +181,33 @@ return nac;
 }
 
 
-bool guardar_usuario(Campo reg){
+bool guardar_usuario(Usuarios reg){
     bool grabo;
     FILE *f;
     f = fopen(file_usuario, "ab");
     if (f == NULL){
         return false;
     }
-    grabo = fwrite(&reg, sizeof(Campo), 1, f);
+    grabo = fwrite(&reg, sizeof(Usuarios), 1, f);
     fclose(f);
     return grabo;
 }
 
-bool guardar_usuario(Campo reg,int pos){
+bool guardar_usuario(Usuarios reg,int pos){
     bool grabo;
     FILE *f;
     f = fopen(file_usuario, "rb+");
     if (f == NULL){
         return false;
     }
-    fseek(f,pos*sizeof(Campo),SEEK_SET);
-    grabo = fwrite(&reg, sizeof(Campo), 1, f);
+    fseek(f,pos*sizeof(Usuarios),SEEK_SET);
+    grabo = fwrite(&reg, sizeof(Usuarios), 1, f);
     fclose(f);
     return grabo;
 }
 
 
-void mostrar_usuario(Campo reg){
+void mostrar_usuario(Usuarios reg){
 
 
 
@@ -173,7 +224,7 @@ if(reg.Estado){
     cout<<"Estado: "<<reg.Estado<<endl;
 }
 else{
-    cout<<"El usuario no se encuentra o fue dado de baja"<<endl;
+    cout<<"El usuario no se encuentra o fue dado de baja"endl;
 }
 
 }
@@ -186,26 +237,27 @@ void mostrar_fecha_de_nacimiento(Fecha nac){
 
 void listar_todos_los_usuarios(){
     int cant=cantidad_de_usuarios();
-
+    cls();
     for(int i=0;i<cant;i++){
 
-      Campo reg=leer_Usuario(i);
-      mostrar_usuario(reg);
+      Usuarios reg=leer_Usuario(i);
+      if(reg.Estado)mostrar_usuario(reg);
       cout<<endl;
     }
+    anykey();
 }
 
 
 
 int buscar_usuario(int ID_buscado){
-    Campo reg;
+    Usuarios reg;
     FILE *f;
     int pos=0;
     f = fopen(file_usuario, "rb");
     if (f == NULL){
         return -1;
     }
-    while(fread(&reg, sizeof(Campo), 1, f)){
+    while(fread(&reg, sizeof(Usuarios), 1, f)){
         if (ID_buscado == reg.ID){
             fclose(f);
             return pos;
@@ -226,57 +278,107 @@ cout<<"Ingrese el ID del Usuario que desea modificar."<<endl;
 cin>>ID;
 
 pos=buscar_usuario(ID);
+Usuarios reg = leer_Usuario(pos);
+if(pos>=0 && reg.Estado){
 
-if(pos>=0){
+     delline(2,APP_FORECOLOR,APP_BACKCOLOR);
+    title("Usuario a modificar ",APP_TITLEFORECOLOR,APP_TITLEBACKCOLOR);
+        cout << endl << endl;
 
-    cout << endl << "Usuario a modificar: " << endl;
-        cout << "---------------------------" << endl;
-        Campo reg = leer_Usuario(pos);
         mostrar_usuario(reg);
         cout << endl;
+        cout<<"-------------------------------------------"<<endl;
 
-        cout<<" Ingrese el nuevo peso: ";
-        cin>>reg.Peso;
-        cout<<endl;
+    cout<<"Ingrese el Peso en kilogramos: ";
+    cin>>reg.Peso;
 
-        cout<<"Ingrese el nuevo Perfil de Atividad: ";
-        cin>>reg.Perfil_de_actividad;
-        cout<<endl;
+    while(reg.Peso<1){
+    delline(13,APP_FORECOLOR,APP_BACKCOLOR);
+    locate(1,13);
+    cout<<"Error al ingresar los datos, vuelva a intentarlo."<<endl;
 
-        cout<<"Ingrese el nuevo Apto Medico: ";
-        cin>>reg.Apto_medico;
-        cout<<endl;
+
+    cout<<"Ingrese el Peso en kilogramos: ";
+    cin>>reg.Peso;
+    cout<<endl;
+    }
+
+
+     bool seguir=1;
+    cout << "Ingrese el perfil de actividad : ";
+    cin>>reg.Perfil_de_actividad;
+    while(seguir){
+            switch(reg.Perfil_de_actividad){
+        case 'A':
+        case 'a':
+        case 'B':
+        case 'b':
+        case 'C':
+        case 'c':
+         seguir=false;
+         break;
+
+        default:
+            seguir=true;
+            break;
+
+            }
+            if(seguir){
+                    delline(15,APP_FORECOLOR,APP_BACKCOLOR);
+                    locate(1,15);
+          cout<<"Error al ingresar los datos, vuelva a intentarlo."<<endl;
+
+          cout << "Ingrese el perfil de actividad : ";
+          cin>>reg.Perfil_de_actividad;
+}
+    }
+
+    cout<<endl;
+
+    cout<<"Ingrese el apto medico(numero 0 o 1): ";
+    cin>>reg.Apto_medico;
+    while(reg.Apto_medico>1 || reg.Apto_medico<0){
+    delline(17,APP_FORECOLOR,APP_BACKCOLOR);
+    locate(1,17);
+    cout<<"Error al ingresar los datos, vuelva a intentarlo."<<endl;
+
+    cout<<"Ingrese el apto medico(numero 0 o 1): ";
+    cin>>reg.Apto_medico ;
+    }
+
+    cout<<endl;
 
         bool grabo=guardar_usuario(reg,pos);
 
-       /* if (guardar_usuario(reg, pos) == true){
-            msj("Usuario guardado correctamente.", APP_FORECOLOR, APP_OKCOLOR);
-            return true;
+       if (guardar_usuario(reg, pos) == true){
+
+            "Usuario guardado correctamente."<<endl;
+
         }
         else{
-            msj("El participante no se guardó correctamente.", APP_FORECOLOR, APP_ERRORCOLOR);
-            return true;
+           cout<<endl<<endl<<"El participante no se guardó correctamente."<<endl;
 
-        }*/
+
+        }
 
 }else{
 
-cout<<"No existe el participante."<<endl;
+cout<<endl<<endl<<"No existe este usuario."<<endl;
+}
+anykey();
+
 }
 
-
-}
-
-Campo leer_Usuario(int pos){
-Campo reg;
+Usuarios leer_Usuario(int pos){
+Usuarios reg;
 
  FILE *p=fopen(file_usuario,"rb");
 if(p==NULL){
     reg.ID==0;
     return reg;
 }
-   fseek(p,pos*sizeof(Campo),SEEK_SET);
-  fread(&reg,sizeof(Campo),1,p);
+   fseek(p,pos*sizeof(Usuarios),SEEK_SET);
+  fread(&reg,sizeof(Usuarios),1,p);
 
   fclose(p);
   return reg;
@@ -284,7 +386,7 @@ if(p==NULL){
 
 int cantidad_de_usuarios(){
 
-  Campo reg;
+  Usuarios reg;
   int cant=0;
   FILE *p;
 
@@ -294,7 +396,7 @@ int cantidad_de_usuarios(){
         cout << "No se puede leer el archivo.";
         return 0;
     }
-    while(fread(&reg, sizeof(Campo), 1, p))cant++;
+    while(fread(&reg, sizeof(Usuarios), 1, p))cant++;
 
   return cant;
 
@@ -304,14 +406,14 @@ void baja_usuario(){
 int ID,pos;
 FILE *p;
 
-
+cls();
 cout<<"Ingrese el ID del Usuario que desea dar de baja."<<endl;
 cin>>ID;
 
 pos=buscar_usuario(ID);
 
 if(pos>=0){
-        Campo reg = leer_Usuario(pos);
+        Usuarios reg = leer_Usuario(pos);
         reg.Estado=false;
 
         bool grabo=guardar_usuario(reg,pos);
@@ -327,7 +429,7 @@ cout<<"No existe el participante."<<endl;
 void listar_usuarios_x_ID(){
 int id,pos;
 
-
+cls();
 cout<<"Ingrese el ID: ";
 cin>>id;
 cout<<endl;
@@ -336,14 +438,14 @@ pos=buscar_usuario(id);
 if(pos==-1)cout<<"No se encontro el Usuario buscado."<<endl;
 else{
 
-    Campo reg=leer_Usuario(pos);
-     system("cls");
+    Usuarios reg=leer_Usuario(pos);
+
      mostrar_usuario(reg);
-}
+     anykey();
 
 
 }
-
+}
 bool comparar(int id){
     bool a=true;
     int pos=buscar_usuario(id);
@@ -374,7 +476,7 @@ Fecha hoy () {
  int validarfecha(Fecha nac,Fecha actual){
  int error=0;
 
- if(nac.anio>actual.anio || nac.anio<1920)error=1;
+ if(nac.anio>actual.anio || nac.anio<1920 || (nac.anio==actual.anio && nac.mes==actual.mes && nac.dia>actual.dia) || (nac.anio==actual.anio && nac.mes>actual.mes) )error=1;
 
  else{
 
@@ -434,7 +536,7 @@ default:
     }
 
     if(error==0){
-
+      error=validaredad(nac,actual);
     }
 
     return error;

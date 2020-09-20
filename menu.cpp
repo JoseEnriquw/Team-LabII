@@ -6,14 +6,19 @@
 using namespace std;
 #include "ui.h"
 #include "rlutil.h"
+#include "Menu.h"
 using namespace rlutil;
 
 void menu_principal(){
 int opcion;
+cls();
+
 
    do{
-   cout<<"MENU PRINCIPAL"<<endl;
-   cout<<"--------------------------"<<endl;
+
+   title("MENU PRINCIPAL",APP_TITLEFORECOLOR,APP_TITLEBACKCOLOR);
+
+   cout<<endl<<endl;
    cout<<"1) USUARIOS"<<endl;
    cout<<"2) ENTRENAMIENTOS"<<endl;
    cout<<"3) REPORTES"<<endl;
@@ -23,7 +28,7 @@ int opcion;
    cin>>opcion;
    switch(opcion){
    case 1:
-       system("cls");
+       cls();
        menu_de_usuario();
        break;
 
@@ -60,10 +65,11 @@ int opcion;
 void menu_de_usuario(){
 int opcion;
 bool grabo;
-Campo reg;
+Usuarios reg;
 do{
-   cout<<"MENU DE USUARIO"<<endl;
-   cout<<"--------------------------"<<endl;
+        cls();
+   title("MENU DE USUARIO",APP_TITLEFORECOLOR,APP_TITLEBACKCOLOR);
+   cout<<endl<<endl;
    cout<<"1) NUEVO USUARIO"<<endl;
    cout<<"2) MODIFICAR USUARIO"<<endl;
    cout<<"3) LISTAR USUARIO POR ID"<<endl;
@@ -82,12 +88,13 @@ do{
        cout<<"Hubo un error, no se pudieron guardar los datos cargados"<<endl;
        }
    break;
-      modificar_usuario();
-   case 2:
 
+   case 2:
+       cls();
+           modificar_usuario();
     break;
    case 3:
-
+          listar_usuarios_x_ID();
     break;
 
    case 4:
@@ -111,5 +118,24 @@ do{
 
 
        }while(opcion!=0);
+     cls();
+}
 
+void menu_de_entrenamiento(){
+    int opcion;
+
+do{
+    switch(opcion){
+case 1:
+
+    break;
+case 0:
+    break;
+default:
+    msj("Error!!!Ingrese una opcion valida.",APP_FORECOLOR,APP_ERRORCOLOR,SCREEN_HEIGHT);
+    break;
+
+
+    }
+}while(opcion!=0);
 }

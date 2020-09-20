@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="Funciones.cpp" />
 		<Unit filename="Funciones.h" />
+		<Unit filename="Menu.h" />
 		<Unit filename="Strucs.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.cpp" />
