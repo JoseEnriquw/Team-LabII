@@ -1,6 +1,14 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
+#include <iostream>
+#include "Funciones.h"
 #include "Strucs.h"
+#include <cstdio>
+#include "rlutil.h"
+#include <ctime>
+
+using namespace rlutil;
+
 Usuarios cargar_usuario();
 bool guardar_usuario(Usuarios);
 bool guardar_usuario(Usuarios,int);
@@ -20,4 +28,6 @@ bool comparar(int);
 Fecha hoy ();
 int validarfecha(Fecha,Fecha);
 int validaredad(Fecha,Fecha);
+
+
 #endif // FUNCIONES_H_INCLUDED

@@ -36,6 +36,8 @@
 		<Unit filename="Funciones.h" />
 		<Unit filename="Menu.h" />
 		<Unit filename="Strucs.h" />
+		<Unit filename="entrenamiento.cpp" />
+		<Unit filename="entrenamiento.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.cpp" />
 		<Unit filename="ui.cpp" />

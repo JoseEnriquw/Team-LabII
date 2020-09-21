@@ -52,3 +52,81 @@
 	"ui.h"
 	"rlutil.h"
 
+1600639878 source:e:\nueva carpeta (2)\team-labii-master\main.cpp
+	<iostream>
+	<cstdio>
+	"Strucs.h"
+	"Funciones.h"
+	"rlutil.h"
+	<ctime>
+	"Menu.h"
+	"ui.h"
+
+1600649272 e:\nueva carpeta (2)\team-labii-master\strucs.h
+
+1600649171 e:\nueva carpeta (2)\team-labii-master\funciones.h
+	<iostream>
+	"Funciones.h"
+	"Strucs.h"
+	<cstdio>
+	"rlutil.h"
+	<ctime>
+
+1600639878 e:\nueva carpeta (2)\team-labii-master\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1600641735 e:\nueva carpeta (2)\team-labii-master\menu.h
+	"Strucs.h"
+
+1600639878 e:\nueva carpeta (2)\team-labii-master\ui.h
+
+1600639878 source:e:\nueva carpeta (2)\team-labii-master\ui.cpp
+	<iostream>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
+1600645363 source:e:\nueva carpeta (2)\team-labii-master\menu.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	"Strucs.h"
+	"Funciones.h"
+	"ui.h"
+	"rlutil.h"
+	"Menu.h"
+	"entrenamiento.h"
+
+1600644262 e:\nueva carpeta (2)\team-labii-master\entrenamiento.h
+	"Strucs.h"
+
+1600648360 source:e:\nueva carpeta (2)\team-labii-master\funciones.cpp
+	<iostream>
+	"Funciones.h"
+	"Strucs.h"
+	<cstdio>
+	"ui.h"
+	<ctime>
+	"rlutil.h"
+
+1600645852 source:e:\nueva carpeta (2)\team-labii-master\entrenamiento.cpp
+	<iostream>
+	"entrenamiento.h"
+	"Funciones.h"
+	"Strucs.h"
+	<cstdio>
+	"ui.h"
+	<ctime>
+	"rlutil.h"
+

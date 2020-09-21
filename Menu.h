@@ -3,5 +3,6 @@
 #include "Strucs.h"
 void menu_principal();
 void menu_de_usuario();
-void menu_de_entrenamiento();
+void Menu_entrenamientos ();
+
 #endif // MENU_H_INCLUDED
