@@ -11,8 +11,9 @@ void Listar_entrenamientos_por_ID ();
 void Listar_todos_los_entrenamientos ();
 Fecha fecha_entrenamiento ();
 int generacion_de_ID ();
-Entrenamiento leer_entrenamiento(int pos);
-void mostrar_entrenamiento (Entrenamiento reg);
-bool guardar_modificacion_entrenamiento (Entrenamiento reg,int pos)
-int buscar_entrenamiento(int ID)
+Entrenamiento leer_entrenamiento(int );
+void mostrar_entrenamiento (Entrenamiento );
+bool guardar_modificacion_entrenamiento (Entrenamiento ,int );
+int buscar_entrenamiento(int );
+int validar_ID_Usuario(int );
 #endif // ENTRENAMIENTO_H_INCLUDED

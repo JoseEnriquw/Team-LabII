@@ -3,12 +3,16 @@
 #include <cstdlib>
 #include "Strucs.h"
 #include "Funciones.h"
+//agregadas 21/9:
+#include "entrenamiento.h"
+#include "ui.h"
+#include <ctime>
+#include "rlutil.h"
 using namespace std;
-
+using namespace rlutil;
 
 #include "Menu.h"
 
-#include "entrenamiento.h"
 
 void menu_principal(){
 int opcion;
@@ -99,7 +103,10 @@ void menu_de_usuario(){
 
 void Menu_entrenamientos () {
    bool guardo;
+   Entrenamiento  reg;
    int opcion, id;
+
+   do{
    title("MENU ENTRENAMIENTOS",APP_TITLEFORECOLOR,APP_TITLEBACKCOLOR);
    cout<<endl<<endl;
    cout<<"1) NUEVO ENTRENAMIENTO"<<endl;
@@ -110,12 +117,22 @@ void Menu_entrenamientos () {
    cout<<"--------------------------"<<endl;
    cout<<"0) VOLVER AL MENU PRINCIPAL"<<endl;
    cin>> opcion;
-
+   cls();
    switch (opcion){
-   case 1: Entrenamiento reg=nuevo_entrenamiento ();
+   case 1: reg=nuevo_entrenamiento ();
            guardo=guardar_entrenamiento(reg);
-           if (guardo) cout<<endl<<"EL ENTRENAMIENTO SE GUARDO CORRECTAMENTE";
-           else { cout <<"NO SE GUARDO EL ENTRENAMIENTO";}
+           if (guardo) {
+                cout<<endl<<"EL ENTRENAMIENTO SE GUARDO CORRECTAMENTE"<<endl;
+           }
+           else {
+               cout <<"NO SE GUARDO EL ENTRENAMIENTO"<<endl;
+           }
+
+            id=generacion_de_ID();
+           cout<<endl <<"Y su ID es:"<< id<<endl;
+
+           anykey();
+            cls();
            break;
    case 2: modificar_entrenamiento ();
            break;
@@ -124,12 +141,12 @@ void Menu_entrenamientos () {
 //   case 4: Listar_entrenamiento_por_Usuarios ();
          //  break;
    case 5: Listar_todos_los_entrenamientos ();
-          break;
-//   case 0:
-//           break;
- //  default: cout<< "OPCION INVALIDA"<<endl;
- //          break;
+           break;
+   case 0:
+           break;
+   default: cout<< "OPCION INVALIDA"<<endl;
+           break;
    }
-
+}while(opcion!=0);
 }
 

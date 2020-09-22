@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1600214988 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\main.cpp
+1600223293 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\main.cpp
 	<iostream>
 	<cstdio>
 	"Strucs.h"
@@ -7,12 +7,12 @@
 	"rlutil.h"
 	<ctime>
 
-1600208010 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\strucs.h
+1600430200 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\strucs.h
 
-1600214282 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.h
+1600430200 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.h
 	"Strucs.h"
 
-1600035607 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.cpp
+1600429960 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.cpp
 	<iostream>
 	<cstdio>
 	<cstdlib>
@@ -21,7 +21,7 @@
 	"ui.h"
 	"rlutil.h"
 
-1600215909 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.cpp
+1600429997 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.cpp
 	<iostream>
 	"Funciones.h"
 	"Strucs.h"
@@ -30,7 +30,7 @@
 	<ctime>
 	"rlutil.h"
 
-1599176855 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\rlutil.h
+1600223293 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -44,27 +44,24 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1600035627 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.h
+1600223293 e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.h
 
-1599176855 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.cpp
+1600223293 source:e:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.cpp
 	<iostream>
 	<cstring>
 	"ui.h"
 	"rlutil.h"
 
-1600639878 source:e:\nueva carpeta (2)\team-labii-master\main.cpp
+1600729507 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.cpp
 	<iostream>
-	<cstdio>
-	"Strucs.h"
 	"Funciones.h"
-	"rlutil.h"
-	<ctime>
-	"Menu.h"
+	"Strucs.h"
+	<cstdio>
 	"ui.h"
+	<ctime>
+	"rlutil.h"
 
-1600649272 e:\nueva carpeta (2)\team-labii-master\strucs.h
-
-1600649171 e:\nueva carpeta (2)\team-labii-master\funciones.h
+1600729513 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.h
 	<iostream>
 	"Funciones.h"
 	"Strucs.h"
@@ -72,7 +69,11 @@
 	"rlutil.h"
 	<ctime>
 
-1600639878 e:\nueva carpeta (2)\team-labii-master\rlutil.h
+1600729475 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\strucs.h
+
+1600729482 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.h
+
+1600729468 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -86,41 +87,38 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1600641735 e:\nueva carpeta (2)\team-labii-master\menu.h
+1600729523 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\main.cpp
+	<iostream>
+	<cstdio>
 	"Strucs.h"
+	"Funciones.h"
+	"rlutil.h"
+	<ctime>
+	"Menu.h"
+	"ui.h"
 
-1600639878 e:\nueva carpeta (2)\team-labii-master\ui.h
-
-1600639878 source:e:\nueva carpeta (2)\team-labii-master\ui.cpp
+1600729480 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.cpp
 	<iostream>
 	<cstring>
 	"ui.h"
 	"rlutil.h"
 
-1600645363 source:e:\nueva carpeta (2)\team-labii-master\menu.cpp
+1600729530 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.h
+	"Strucs.h"
+
+1600732920 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.cpp
 	<iostream>
 	<cstdio>
 	<cstdlib>
 	"Strucs.h"
 	"Funciones.h"
+	"entrenamiento.h"
 	"ui.h"
+	<ctime>
 	"rlutil.h"
 	"Menu.h"
-	"entrenamiento.h"
 
-1600644262 e:\nueva carpeta (2)\team-labii-master\entrenamiento.h
-	"Strucs.h"
-
-1600648360 source:e:\nueva carpeta (2)\team-labii-master\funciones.cpp
-	<iostream>
-	"Funciones.h"
-	"Strucs.h"
-	<cstdio>
-	"ui.h"
-	<ctime>
-	"rlutil.h"
-
-1600645852 source:e:\nueva carpeta (2)\team-labii-master\entrenamiento.cpp
+1600731868 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\entrenamiento.cpp
 	<iostream>
 	"entrenamiento.h"
 	"Funciones.h"
@@ -129,4 +127,7 @@
 	"ui.h"
 	<ctime>
 	"rlutil.h"
+
+1600732973 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\entrenamiento.h
+	"Strucs.h"
 

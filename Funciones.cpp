@@ -1,11 +1,11 @@
 #include <iostream>
-using namespace std;
 #include "Funciones.h"
 #include "Strucs.h"
 #include <cstdio>
 #include "ui.h"
 #include <ctime>
 #include "rlutil.h"
+using namespace std;
 using namespace rlutil;
 const char *file_usuario="Archivo.dat";
 
