@@ -52,7 +52,7 @@
 	"ui.h"
 	"rlutil.h"
 
-1600729507 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.cpp
+1600810896 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.cpp
 	<iostream>
 	"Funciones.h"
 	"Strucs.h"
@@ -61,7 +61,7 @@
 	<ctime>
 	"rlutil.h"
 
-1600729513 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.h
+1600810893 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.h
 	<iostream>
 	"Funciones.h"
 	"Strucs.h"
@@ -69,11 +69,11 @@
 	"rlutil.h"
 	<ctime>
 
-1600729475 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\strucs.h
+1600810864 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\strucs.h
 
-1600729482 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.h
+1600810858 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.h
 
-1600729468 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\rlutil.h
+1600810868 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -87,7 +87,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1600729523 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\main.cpp
+1600810879 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\main.cpp
 	<iostream>
 	<cstdio>
 	"Strucs.h"
@@ -97,16 +97,16 @@
 	"Menu.h"
 	"ui.h"
 
-1600729480 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.cpp
+1600810861 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.cpp
 	<iostream>
 	<cstring>
 	"ui.h"
 	"rlutil.h"
 
-1600729530 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.h
+1600810872 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.h
 	"Strucs.h"
 
-1600732920 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.cpp
+1600819918 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.cpp
 	<iostream>
 	<cstdio>
 	<cstdlib>
@@ -118,7 +118,7 @@
 	"rlutil.h"
 	"Menu.h"
 
-1600731868 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\entrenamiento.cpp
+1600820667 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\entrenamiento.cpp
 	<iostream>
 	"entrenamiento.h"
 	"Funciones.h"
@@ -128,6 +128,6 @@
 	<ctime>
 	"rlutil.h"
 
-1600732973 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\entrenamiento.h
+1600819918 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\entrenamiento.h
 	"Strucs.h"
 

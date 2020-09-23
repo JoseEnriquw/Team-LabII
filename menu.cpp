@@ -104,7 +104,7 @@ void menu_de_usuario(){
 void Menu_entrenamientos () {
    bool guardo;
    Entrenamiento  reg;
-   int opcion, id;
+   int opcion;
 
    do{
    title("MENU ENTRENAMIENTOS",APP_TITLEFORECOLOR,APP_TITLEBACKCOLOR);
@@ -120,7 +120,9 @@ void Menu_entrenamientos () {
    cls();
    switch (opcion){
    case 1: reg=nuevo_entrenamiento ();
+           if(reg.ID!=-1){
            guardo=guardar_entrenamiento(reg);
+
            if (guardo) {
                 cout<<endl<<"EL ENTRENAMIENTO SE GUARDO CORRECTAMENTE"<<endl;
            }
@@ -128,18 +130,19 @@ void Menu_entrenamientos () {
                cout <<"NO SE GUARDO EL ENTRENAMIENTO"<<endl;
            }
 
-            id=generacion_de_ID();
-           cout<<endl <<"Y su ID es:"<< id<<endl;
 
+           cout<<"Y su ID es:"<< reg.ID<<endl;
+               }
            anykey();
             cls();
+
            break;
    case 2: modificar_entrenamiento ();
            break;
    case 3: Listar_entrenamientos_por_ID ();
            break;
-//   case 4: Listar_entrenamiento_por_Usuarios ();
-         //  break;
+   case 4: Listar_entrenamiento_por_Usuarios ();
+           break;
    case 5: Listar_todos_los_entrenamientos ();
            break;
    case 0:

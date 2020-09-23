@@ -10,14 +10,20 @@
 using namespace std;
 using namespace rlutil;
 const char *file_entrenamiento = "entrenamiento.dat" ;
-
+const char *fil_usuario="Archivo.dat";
 
 Entrenamiento nuevo_entrenamiento (){
  Fecha actual;
  actual=hoy();
  int error=0;
  Entrenamiento reg;
- int ID,ID_usuarios;
+ int ID_usuarios, actividad;
+ bool seguir=false;
+
+
+ reg.ID=cantidad_entrenamiento() +1;
+
+
  cout <<"INGRESE ID DE USUARIO: ";
  cin>>ID_usuarios;
  reg.ID_usuarios=validar_ID_Usuario(ID_usuarios);
@@ -43,7 +49,40 @@ do{ cout <<"FECHA DE ENTRENAMIENTO"<<endl;
           break;}}
           while (error!=0);
  cout <<"ACTIVIDAD"<<endl;
- cin>> reg.actividad;
+ cin>> actividad;
+ while(seguir==false){
+            switch(actividad){
+            case 1:
+            case 2:
+            case 3:
+                   seguir=true;
+                    break;
+            case 4:
+            case 5:
+                   seguir=validar_actividad(ID_usuarios);
+                   if(seguir==false){
+                     cout<<"No tiene el apto medico"<<endl;
+                      anykey();
+
+                   reg.ID=-1;
+                   return reg;
+
+                   }
+            default:
+
+            delline(7,APP_FORECOLOR,APP_BACKCOLOR);
+            delline(8,APP_FORECOLOR,APP_BACKCOLOR);
+            locate(1,7);
+            cout<<"Error al ingresar los datos, vuelva a intentarlo."<<endl;
+            cout << "Ingrese la actividad : ";
+            cin>>actividad;
+             break;
+}
+
+            }
+
+
+reg.actividad=actividad;
  //falta validad actividad
  cout <<"CALORIAS"<<endl;
  cin>> reg.calorias;
@@ -64,7 +103,7 @@ do{ cout <<"FECHA DE ENTRENAMIENTO"<<endl;
               cout<<"Ingrese el tiempo en minutos";
               cin>>reg.tiempo;
  }
-           reg.ID=0;
+
 
  return reg;
  }
@@ -80,25 +119,17 @@ Fecha fecha_entrenamiento (){
  return reg;
 }
 
-int generacion_de_ID (){
-    int ID=0;
-    FILE *P;
-    Entrenamiento reg;
-
-    P=fopen(file_entrenamiento, "rb+");
-
-    if (P==NULL){
-        return -1 ;
-        }
-
-    while (fread(&reg, sizeof(Entrenamiento),1,P)==1) {
-     ID++;
-     reg.ID=ID;
-        }
-    fseek(P,(ID-1)*sizeof(Entrenamiento),SEEK_SET);
-    fwrite(&reg,sizeof(Entrenamiento),1,P);
-    fclose(P);
-    return ID;
+int cantidad_entrenamiento(){
+    FILE *p = fopen(file_entrenamiento, "rb");
+    if (p == NULL){
+        return 0;
+    }
+    int bytes, cant;
+    fseek(p, 0, SEEK_END);
+    bytes = ftell(p);
+    fclose(p);
+    cant = bytes / sizeof(Entrenamiento);
+    return cant;
 }
 
 bool guardar_entrenamiento ( Entrenamiento reg){
@@ -221,8 +252,13 @@ void Listar_todos_los_entrenamientos (){
     return;
  }
  while (fread(&reg, sizeof(Entrenamiento),1, P)==1){
-    mostrar_entrenamiento(reg);
-    cout<<endl;
+        int pos=buscar_usuario(reg.ID_usuarios);
+
+        Usuarios aux=leer_Usuario(pos);
+
+        if(aux.Estado==false) cout<<"Este usuario fue dado de baja:"<<endl;
+        mostrar_entrenamiento(reg);
+        cout<<endl;
     }
     fclose(P);
     anykey();
@@ -245,3 +281,76 @@ id=ID;
 
 
  }
+
+ bool validar_actividad(int ID_usuarios){
+   Usuarios reg;
+   int pos;
+   bool apto=false;
+
+   pos=buscar_usuario (ID_usuarios);
+   FILE *P;
+   P=fopen(fil_usuario, "rb");
+   if (P==NULL){
+       cout<<"Error en archivo";
+       return apto;
+   }
+
+   fseek(P,pos*sizeof(Usuarios),0);
+   fread(&reg, sizeof(Usuarios),1,P);
+   apto=reg.Apto_medico;
+   fclose(P);
+   return apto;
+}
+
+void Listar_entrenamiento_por_Usuarios (){
+ Usuarios reg;
+
+ int id_usuario;
+ int pos;
+
+  cout<<"Ingrese el ID de usuario: ";
+  cin>>id_usuario;
+
+
+
+  pos=buscar_usuario(id_usuario);
+  if (pos==-1){
+    cout<<"El usuario no existe"<<endl;
+    return;
+  }
+  reg=leer_Usuario(pos);
+
+  if (reg.Estado==true) Listar_entrenamientos_por_ID_Usuario (id_usuario);
+
+  else  cout<<"El usuario fue dado de baja.";
+
+
+
+    anykey();
+    cls();
+
+ }
+
+
+
+void Listar_entrenamientos_por_ID_Usuario (int id_usuario){
+Entrenamiento reg;
+FILE *F;
+
+ F=fopen(file_entrenamiento, "rb");
+ if (F==NULL){
+    cout<<"No se pudo leer el archivo";
+    return;
+  }
+
+  while (fread(&reg, sizeof(Entrenamiento), 1,F)==1){
+    if(reg.ID_usuarios==id_usuario){
+
+        mostrar_entrenamiento (reg);
+    }
+  }
+    fclose(F);
+    anykey();
+    cls();
+
+}
