@@ -15,39 +15,38 @@ using namespace rlutil;
 
 
 void menu_principal(){
-int opcion;
-cls();
-   do{
-   title("MENU PRINCIPAL",APP_TITLEFORECOLOR,APP_TITLEBACKCOLOR);
-   cout<<endl<<endl;
-   cout<<"1) USUARIOS"<<endl;
-   cout<<"2) ENTRENAMIENTOS"<<endl;
-   cout<<"3) REPORTES"<<endl;
-   cout<<"4) CONFIGURACION"<<endl;
-   cout<<"--------------------------"<<endl;
-   cout<<"0) SALIR DEL PROGRAMA"<<endl;
-   cin>>opcion;
-   switch(opcion){
-   case 1:
-        cls();
-        menu_de_usuario();
-        break;
-   case 2:
-        Menu_entrenamientos ();
-        break;
-   case 3:
-        break;
-   case 4:
-        break;
-   case 0:
-        break;
-    ///Completar!!!!!
-   default:
-        cout<<"Error!!!"<<endl;
-        cout<<"Ingrese una opcion valida."<<endl;
-        break;
-  }
-   }while(opcion!=0);
+    int opcion;
+    cls();
+    do{
+        title("MENU PRINCIPAL",APP_TITLEFORECOLOR,APP_TITLEBACKCOLOR);
+        cout<<endl<<endl;
+        cout<<"1) USUARIOS"<<endl;
+        cout<<"2) ENTRENAMIENTOS"<<endl;
+        cout<<"3) REPORTES"<<endl;
+        cout<<"4) CONFIGURACION"<<endl;
+        cout<<"--------------------------"<<endl;
+        cout<<"0) SALIR DEL PROGRAMA"<<endl;
+        cin>>opcion;
+        switch(opcion){
+                case 1:
+                cls();
+                menu_de_usuario();
+                break;
+        case 2:
+                Menu_entrenamientos ();
+                break;
+        case 3:
+                break;
+        case 4:
+                break;
+        case 0:
+                break;
+       default:
+                cout<<"Error!!!"<<endl;
+                cout<<"Ingrese una opcion valida."<<endl;
+                break;
+                }
+        }while(opcion!=0);
 }
 
 void menu_de_usuario(){
@@ -105,7 +104,6 @@ void Menu_entrenamientos () {
    bool guardo;
    Entrenamiento  reg;
    int opcion;
-
    do{
    title("MENU ENTRENAMIENTOS",APP_TITLEFORECOLOR,APP_TITLEBACKCOLOR);
    cout<<endl<<endl;
@@ -119,35 +117,37 @@ void Menu_entrenamientos () {
    cin>> opcion;
    cls();
    switch (opcion){
-   case 1: reg=nuevo_entrenamiento ();
+   case 1:
+           reg=nuevo_entrenamiento ();
            if(reg.ID!=-1){
            guardo=guardar_entrenamiento(reg);
-
            if (guardo) {
                 cout<<endl<<"EL ENTRENAMIENTO SE GUARDO CORRECTAMENTE"<<endl;
            }
            else {
                cout <<"NO SE GUARDO EL ENTRENAMIENTO"<<endl;
            }
-
-
            cout<<"Y su ID es:"<< reg.ID<<endl;
                }
            anykey();
-            cls();
-
+           cls();
            break;
-   case 2: modificar_entrenamiento ();
+   case 2:
+           modificar_entrenamiento ();
            break;
-   case 3: Listar_entrenamientos_por_ID ();
+   case 3:
+           Listar_entrenamientos_por_ID ();
            break;
-   case 4: Listar_entrenamiento_por_Usuarios ();
+   case 4:
+           Listar_entrenamiento_por_Usuarios ();
            break;
-   case 5: Listar_todos_los_entrenamientos ();
+   case 5:
+           Listar_todos_los_entrenamientos ();
            break;
    case 0:
+           return;
            break;
-   default: cout<< "OPCION INVALIDA"<<endl;
+   default:cout<< "OPCION INVALIDA"<<endl;
            break;
    }
 }while(opcion!=0);

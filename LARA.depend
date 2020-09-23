@@ -131,3 +131,82 @@
 1600819918 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\entrenamiento.h
 	"Strucs.h"
 
+1600825196 source:e:\trabajooo lab 2\team-labii-master\funciones.cpp
+	<iostream>
+	"Funciones.h"
+	"Strucs.h"
+	<cstdio>
+	"ui.h"
+	<ctime>
+	"rlutil.h"
+
+1600826819 e:\trabajooo lab 2\team-labii-master\funciones.h
+	<iostream>
+	"Funciones.h"
+	"Strucs.h"
+	<cstdio>
+	"rlutil.h"
+	<ctime>
+
+1600825270 e:\trabajooo lab 2\team-labii-master\strucs.h
+
+1600821622 e:\trabajooo lab 2\team-labii-master\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1600821622 e:\trabajooo lab 2\team-labii-master\ui.h
+
+1600825198 source:e:\trabajooo lab 2\team-labii-master\main.cpp
+	<iostream>
+	<cstdio>
+	"Strucs.h"
+	"Funciones.h"
+	"rlutil.h"
+	<ctime>
+	"Menu.h"
+	"ui.h"
+
+1600821622 e:\trabajooo lab 2\team-labii-master\menu.h
+	"Strucs.h"
+
+1600825528 source:e:\trabajooo lab 2\team-labii-master\menu.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	"Strucs.h"
+	"Funciones.h"
+	"entrenamiento.h"
+	"ui.h"
+	<ctime>
+	"rlutil.h"
+	"Menu.h"
+
+1600826819 e:\trabajooo lab 2\team-labii-master\entrenamiento.h
+	"Strucs.h"
+
+1600825295 source:e:\trabajooo lab 2\team-labii-master\ui.cpp
+	<iostream>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
+1600823251 source:e:\trabajooo lab 2\team-labii-master\entrenamiento.cpp
+	<iostream>
+	"entrenamiento.h"
+	"Funciones.h"
+	"Strucs.h"
+	<cstdio>
+	"ui.h"
+	<ctime>
+	"rlutil.h"
+

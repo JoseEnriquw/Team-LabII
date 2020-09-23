@@ -56,12 +56,10 @@ void delline(int line, int foreColor, int backColor){
 }
 
 void msj1(const char *mensaje,int forecolor,int backcolor,int y){
-
-
-delline(y,forecolor,backcolor);
-cout<<mensaje;
-gotoxy(1,y);
-anykey();
-delline(y,APP_FORECOLOR,APP_BACKCOLOR);
+    delline(y,forecolor,backcolor);
+    cout<<mensaje;
+    gotoxy(1,y);
+    anykey();
+    delline(y,APP_FORECOLOR,APP_BACKCOLOR);
 
 }

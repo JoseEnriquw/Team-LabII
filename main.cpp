@@ -9,13 +9,7 @@
 using namespace std;
 
 int main(){
-rlutil::setBackgroundColor(APP_BACKCOLOR);
- menu_principal();
-
-
-
-
-
-
+    rlutil::setBackgroundColor(APP_BACKCOLOR);
+    menu_principal();
     return 0;
 }

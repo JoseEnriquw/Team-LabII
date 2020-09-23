@@ -17,7 +17,6 @@ void mostrar_usuario(Usuarios);
 void mostrar_fecha_de_nacimiento(Fecha);
 void listar_todos_los_usuarios();
 int buscar_usuario(int);
-bool guardar_usuario(Usuarios);
 void modificar_usuario();
 Usuarios leer_Usuario(int);
 
