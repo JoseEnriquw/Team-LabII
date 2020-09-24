@@ -103,10 +103,10 @@
 	"ui.h"
 	"rlutil.h"
 
-1600908925 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.h
+1600982507 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.h
 	"Strucs.h"
 
-1600973663 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.cpp
+1600983042 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.cpp
 	<iostream>
 	"Strucs.h"
 	"Funciones.h"
@@ -210,7 +210,7 @@
 
 1600912875 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\backup.h
 
-1600971399 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\bakup.cpp
+1600983127 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\bakup.cpp
 	<iostream>
 	"entrenamiento.h"
 	"Funciones.h"
@@ -220,4 +220,6 @@
 	<ctime>
 	"rlutil.h"
 	"backup.h"
+
+1600982381 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\reporte.cpp
 

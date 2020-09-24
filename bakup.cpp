@@ -209,7 +209,7 @@ FILE *p = fopen(a, "rb");
     fseek(p, 0, SEEK_END);
     bytes = ftell(p);
     fclose(p);
-    if(a=="Datos/Entremiento.bkp")cant = bytes / sizeof(Entrenamiento);
+    if(a==entrenamiento_bkp)cant = bytes / sizeof(Entrenamiento);
     else cant = bytes / sizeof(Usuarios);
 
     return cant;

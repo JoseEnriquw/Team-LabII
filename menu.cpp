@@ -34,6 +34,7 @@ void menu_principal(){
                 Menu_entrenamientos ();
                 break;
         case 3:
+                Menu_reportes();
                 break;
         case 4:
                 Menu_configuracion ();
@@ -224,11 +225,11 @@ void Menu_reportes(){
             cls();
     title("MENU DE REPORTES",APP_TITLEFORECOLOR,APP_TITLEBACKCOLOR);
 
-
+     cin>>opcion;
 
 
 }
-  while(opcion!=0)
+  while(opcion!=0);
 
 
 

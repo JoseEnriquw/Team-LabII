@@ -229,12 +229,12 @@ void modificar_entrenamiento () {
 
 //FUNCION PARA LISTAR EL ENTRENAMIENTO POR ID!
 void Listar_entrenamientos_por_ID (){
-  int id,pos;
+  int id;
   cls();
   cout<<"Ingrese el ID: ";
   cin>>id;
   cout<<endl;
-       Entrenamiento reg=leer_entrenamiento(id);
+       Entrenamiento reg=leer_entrenamiento(id-1);
        mostrar_entrenamiento(reg);
        anykey();
        cls();
