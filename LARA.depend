@@ -166,7 +166,7 @@
 
 1600821622 e:\trabajooo lab 2\team-labii-master\ui.h
 
-1600825198 source:e:\trabajooo lab 2\team-labii-master\main.cpp
+1600901463 source:e:\trabajooo lab 2\team-labii-master\main.cpp
 	<iostream>
 	<cstdio>
 	"Strucs.h"
@@ -175,11 +175,12 @@
 	<ctime>
 	"Menu.h"
 	"ui.h"
+	"backup.h"
 
-1600821622 e:\trabajooo lab 2\team-labii-master\menu.h
+1600901415 e:\trabajooo lab 2\team-labii-master\menu.h
 	"Strucs.h"
 
-1600825528 source:e:\trabajooo lab 2\team-labii-master\menu.cpp
+1600901484 source:e:\trabajooo lab 2\team-labii-master\menu.cpp
 	<iostream>
 	<cstdio>
 	<cstdlib>
@@ -189,6 +190,7 @@
 	"ui.h"
 	<ctime>
 	"rlutil.h"
+	"backup.h"
 	"Menu.h"
 
 1600826819 e:\trabajooo lab 2\team-labii-master\entrenamiento.h
@@ -200,7 +202,7 @@
 	"ui.h"
 	"rlutil.h"
 
-1600823251 source:e:\trabajooo lab 2\team-labii-master\entrenamiento.cpp
+1600826819 source:e:\trabajooo lab 2\team-labii-master\entrenamiento.cpp
 	<iostream>
 	"entrenamiento.h"
 	"Funciones.h"
@@ -209,4 +211,16 @@
 	"ui.h"
 	<ctime>
 	"rlutil.h"
+
+1600902265 source:e:\trabajooo lab 2\team-labii-master\bakup.cpp
+	<iostream>
+	"entrenamiento.h"
+	"Funciones.h"
+	"Strucs.h"
+	<cstdio>
+	"ui.h"
+	<ctime>
+	"rlutil.h"
+
+1600901415 e:\trabajooo lab 2\team-labii-master\backup.h
 

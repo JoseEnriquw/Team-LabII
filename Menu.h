@@ -4,5 +4,6 @@
 void menu_principal();
 void menu_de_usuario();
 void Menu_entrenamientos ();
+void  Menu_configuracion ();
 
 #endif // MENU_H_INCLUDED

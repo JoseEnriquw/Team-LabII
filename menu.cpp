@@ -8,6 +8,7 @@
 #include "ui.h"
 #include <ctime>
 #include "rlutil.h"
+#include "backup.h"
 using namespace std;
 using namespace rlutil;
 
@@ -38,6 +39,7 @@ void menu_principal(){
         case 3:
                 break;
         case 4:
+                Menu_configuracion ();
                 break;
         case 0:
                 break;
@@ -153,3 +155,35 @@ void Menu_entrenamientos () {
 }while(opcion!=0);
 }
 
+void  Menu_configuracion (){
+        int opcion;
+        do{
+        cls();
+        title("MENU DE CONFIGURACION",APP_TITLEFORECOLOR,APP_TITLEBACKCOLOR);
+        cout<<endl<<endl;
+        cout<<"1) REALIZAR COPIA DE SEGURIDAD"<<endl;
+        cout<<"2) RESTAURAR COPIA DE SEGURIDAD"<<endl;
+        cout<<"0) VOLVER AL MENU PRINCIPAL"<<endl;
+        cin>>opcion;
+   switch(opcion){
+    case 1:
+        realizar_backup ();
+        break;
+    case 2:
+
+        break;
+    case 0:
+        return;
+        break;
+    default:
+        cout<<"Error!!!"<<endl;
+        cout<<"Ingrese una opcion valida."<<endl;
+        break;
+   }
+ }while(opcion!=0);
+        cls();
+
+
+
+
+}
