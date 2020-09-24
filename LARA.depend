@@ -52,7 +52,7 @@
 	"ui.h"
 	"rlutil.h"
 
-1600810896 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.cpp
+1600970967 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.cpp
 	<iostream>
 	"Funciones.h"
 	"Strucs.h"
@@ -61,7 +61,7 @@
 	<ctime>
 	"rlutil.h"
 
-1600810893 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.h
+1600957699 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\funciones.h
 	<iostream>
 	"Funciones.h"
 	"Strucs.h"
@@ -69,11 +69,11 @@
 	"rlutil.h"
 	<ctime>
 
-1600810864 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\strucs.h
+1600826899 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\strucs.h
 
-1600810858 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.h
+1600970691 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.h
 
-1600810868 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\rlutil.h
+1600826899 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -87,7 +87,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1600810879 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\main.cpp
+1600826899 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\main.cpp
 	<iostream>
 	<cstdio>
 	"Strucs.h"
@@ -97,28 +97,26 @@
 	"Menu.h"
 	"ui.h"
 
-1600810861 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.cpp
+1600908799 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\ui.cpp
 	<iostream>
 	<cstring>
 	"ui.h"
 	"rlutil.h"
 
-1600810872 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.h
+1600908925 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.h
 	"Strucs.h"
 
-1600819918 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.cpp
+1600973663 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\menu.cpp
 	<iostream>
-	<cstdio>
-	<cstdlib>
 	"Strucs.h"
 	"Funciones.h"
 	"entrenamiento.h"
 	"ui.h"
-	<ctime>
 	"rlutil.h"
+	"backup.h"
 	"Menu.h"
 
-1600820667 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\entrenamiento.cpp
+1600977472 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\entrenamiento.cpp
 	<iostream>
 	"entrenamiento.h"
 	"Funciones.h"
@@ -128,7 +126,7 @@
 	<ctime>
 	"rlutil.h"
 
-1600819918 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\entrenamiento.h
+1600826899 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\entrenamiento.h
 	"Strucs.h"
 
 1600825196 source:e:\trabajooo lab 2\team-labii-master\funciones.cpp
@@ -166,7 +164,7 @@
 
 1600821622 e:\trabajooo lab 2\team-labii-master\ui.h
 
-1600901463 source:e:\trabajooo lab 2\team-labii-master\main.cpp
+1600825198 source:e:\trabajooo lab 2\team-labii-master\main.cpp
 	<iostream>
 	<cstdio>
 	"Strucs.h"
@@ -175,12 +173,11 @@
 	<ctime>
 	"Menu.h"
 	"ui.h"
-	"backup.h"
 
-1600901415 e:\trabajooo lab 2\team-labii-master\menu.h
+1600821622 e:\trabajooo lab 2\team-labii-master\menu.h
 	"Strucs.h"
 
-1600901484 source:e:\trabajooo lab 2\team-labii-master\menu.cpp
+1600825528 source:e:\trabajooo lab 2\team-labii-master\menu.cpp
 	<iostream>
 	<cstdio>
 	<cstdlib>
@@ -190,7 +187,6 @@
 	"ui.h"
 	<ctime>
 	"rlutil.h"
-	"backup.h"
 	"Menu.h"
 
 1600826819 e:\trabajooo lab 2\team-labii-master\entrenamiento.h
@@ -202,7 +198,7 @@
 	"ui.h"
 	"rlutil.h"
 
-1600826819 source:e:\trabajooo lab 2\team-labii-master\entrenamiento.cpp
+1600823251 source:e:\trabajooo lab 2\team-labii-master\entrenamiento.cpp
 	<iostream>
 	"entrenamiento.h"
 	"Funciones.h"
@@ -212,7 +208,9 @@
 	<ctime>
 	"rlutil.h"
 
-1600908814 source:e:\trabajooo lab 2\team-labii-master\bakup.cpp
+1600912875 d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\backup.h
+
+1600971399 source:d:\programacion\segundo cuatri\laboratorio ii\tp 1\lara\bakup.cpp
 	<iostream>
 	"entrenamiento.h"
 	"Funciones.h"
@@ -221,6 +219,5 @@
 	"ui.h"
 	<ctime>
 	"rlutil.h"
-
-1600901415 e:\trabajooo lab 2\team-labii-master\backup.h
+	"backup.h"
 

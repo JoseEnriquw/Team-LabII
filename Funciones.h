@@ -27,6 +27,7 @@ bool comparar(int);
 Fecha hoy ();
 int validarfecha(Fecha,Fecha);
 int validaredad(Fecha,Fecha);
+bool anio_bisiesto(int);
 
 
 #endif // FUNCIONES_H_INCLUDED

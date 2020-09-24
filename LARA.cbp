@@ -36,16 +36,16 @@
 		<Unit filename="Funciones.h" />
 		<Unit filename="Menu.h" />
 		<Unit filename="Strucs.h" />
+		<Unit filename="backup.h" />
+		<Unit filename="bakup.cpp" />
 		<Unit filename="entrenamiento.cpp" />
 		<Unit filename="entrenamiento.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.cpp" />
+		<Unit filename="reporte.cpp" />
+		<Unit filename="reporte.h" />
 		<Unit filename="ui.cpp" />
 		<Unit filename="ui.h" />
-		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

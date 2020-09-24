@@ -1,18 +1,15 @@
 #include <iostream>
-#include <cstdio>
-#include <cstdlib>
 #include "Strucs.h"
 #include "Funciones.h"
-//agregadas 21/9:
 #include "entrenamiento.h"
 #include "ui.h"
-#include <ctime>
 #include "rlutil.h"
 #include "backup.h"
+#include "Menu.h"
 using namespace std;
 using namespace rlutil;
 
-#include "Menu.h"
+
 
 
 void menu_principal(){
@@ -48,7 +45,9 @@ void menu_principal(){
                 cout<<"Ingrese una opcion valida."<<endl;
                 break;
                 }
+                cls();
         }while(opcion!=0);
+
 }
 
 void menu_de_usuario(){
@@ -70,15 +69,28 @@ void menu_de_usuario(){
    switch(opcion){
     case 1:
         reg=cargar_usuario();
+        if(reg.Estado){
         grabo=guardar_usuario(reg);
         if(grabo){
+            delline(18,APP_FORECOLOR,APP_OKCOLOR);
+            locate(1,18);
             cout<<"Usuario cargado y guardado correctamente"<<endl;
+            cin.ignore();
+            anykey();
        }else{
+            delline(18,APP_FORECOLOR,APP_ERRORCOLOR);
+            locate(1,18);
             cout<<"Hubo un error, no se pudieron guardar los datos cargados"<<endl;
+            cin.ignore();
+            anykey();
        }
+            delline(18,APP_FORECOLOR,APP_BACKCOLOR);
+
+        }
+
         break;
     case 2:
-        cls();
+         cls();
         modificar_usuario();
         break;
     case 3:
@@ -98,8 +110,9 @@ void menu_de_usuario(){
         cout<<"Ingrese una opcion valida."<<endl;
         break;
    }
+   cls();
  }while(opcion!=0);
-        cls();
+
 }
 
 void Menu_entrenamientos () {
@@ -107,6 +120,7 @@ void Menu_entrenamientos () {
    Entrenamiento  reg;
    int opcion;
    do{
+        cls();
    title("MENU ENTRENAMIENTOS",APP_TITLEFORECOLOR,APP_TITLEBACKCOLOR);
    cout<<endl<<endl;
    cout<<"1) NUEVO ENTRENAMIENTO"<<endl;
@@ -118,20 +132,31 @@ void Menu_entrenamientos () {
    cout<<"0) VOLVER AL MENU PRINCIPAL"<<endl;
    cin>> opcion;
    cls();
+
    switch (opcion){
    case 1:
            reg=nuevo_entrenamiento ();
            if(reg.ID!=-1){
            guardo=guardar_entrenamiento(reg);
            if (guardo) {
-                cout<<endl<<"EL ENTRENAMIENTO SE GUARDO CORRECTAMENTE"<<endl;
+                 delline(1,APP_FORECOLOR,APP_OKCOLOR);
+                locate(1,1);
+                cout<<"EL ENTRENAMIENTO SE GUARDO CORRECTAMENTE";
+                delline(2,APP_FORECOLOR,APP_OKCOLOR);
+                locate(1,2);
+                cout<<"Y su ID es:"<< reg.ID<<endl;
            }
            else {
+                delline(1,APP_FORECOLOR,APP_ERRORCOLOR);
+                locate(1,1);
                cout <<"NO SE GUARDO EL ENTRENAMIENTO"<<endl;
            }
-           cout<<"Y su ID es:"<< reg.ID<<endl;
+
                }
            anykey();
+            delline(1,APP_FORECOLOR,APP_BACKCOLOR);
+            delline(2,APP_FORECOLOR,APP_BACKCOLOR);
+
            cls();
            break;
    case 2:
@@ -152,7 +177,9 @@ void Menu_entrenamientos () {
    default:cout<< "OPCION INVALIDA"<<endl;
            break;
    }
+   cls();
 }while(opcion!=0);
+
 }
 
 void  Menu_configuracion (){
@@ -170,18 +197,39 @@ void  Menu_configuracion (){
         realizar_backup ();
         break;
     case 2:
-
+         restaurar_copia_seguridad();
         break;
     case 0:
-        return;
+
         break;
     default:
         cout<<"Error!!!"<<endl;
         cout<<"Ingrese una opcion valida."<<endl;
         break;
    }
+   cls();
  }while(opcion!=0);
-        cls();
+
+
+
+
+
+}
+
+void Menu_reportes(){
+
+    int opcion;
+
+    do{
+            cls();
+    title("MENU DE REPORTES",APP_TITLEFORECOLOR,APP_TITLEBACKCOLOR);
+
+
+
+
+}
+  while(opcion!=0)
+
 
 
 

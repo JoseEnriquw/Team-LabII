@@ -9,8 +9,8 @@
 
 using namespace std;
 using namespace rlutil;
-const char *file_entrenamiento = "entrenamiento.dat" ;
-const char *file_usuario="Archivo.dat";
+const char *file_entrenamiento = "Datos/Entrenamientos.dat" ;
+const char *file_usuario="Datos/Usuarios.dat";
 //FUNCION PARA CARGAR UN NUEVO ENTRENAMIENTO
 Entrenamiento nuevo_entrenamiento (){
     Fecha actual;
@@ -24,7 +24,7 @@ Entrenamiento nuevo_entrenamiento (){
     cin>>ID_usuarios;
     reg.ID_usuarios=validar_ID_Usuario(ID_usuarios);//VALIDAMOS QUE EL ID DE USUARIO ESTE OK
     do{
-            cout <<"FECHA DE ENTRENAMIENTO"<<endl;
+
             reg.fecha_de_entrenamiento= fecha_entrenamiento ();//CARGO LA FECHA
             error=validarfecha(reg.fecha_de_entrenamiento,actual);//VALIDO LA FECHA
     switch(error){
@@ -37,12 +37,10 @@ Entrenamiento nuevo_entrenamiento (){
         case 3:
             cout<<"El dia ingresado no es valido"<<endl;
             break;
-        case 4:
-            cout<<"Menor de edad"<<endl;
-            break;
         default:
             break;}}
             while (error!=0);
+            cout<<endl;
     cout <<"ACTIVIDAD"<<endl;
     cin>> actividad;
     do{//VALIDAMOS LA ACTIVIDAD
@@ -73,6 +71,7 @@ Entrenamiento nuevo_entrenamiento (){
                  }
             } while (!seguir);
     reg.actividad=actividad;
+    cout<<endl;
     cout <<"CALORIAS"<<endl;
     cin>> reg.calorias;
     while (reg.calorias<1){//VALIDAMOS LAS CALORIAS
@@ -82,6 +81,7 @@ Entrenamiento nuevo_entrenamiento (){
                 cout<<endl;
                 cout<<"Ingrese las calorias: ";
                 cin>>reg.calorias;}
+    cout<<endl;
     cout <<"TIEMPO"<<endl;
     cin>> reg.tiempo;
     while(reg.tiempo<1){//VALIDAMOS EL TIEMPO
@@ -91,18 +91,29 @@ Entrenamiento nuevo_entrenamiento (){
               cout<<endl;
               cout<<"Ingrese el tiempo en minutos";
               cin>>reg.tiempo;
+              cout<<endl;
  }
     return reg;
  }
 //FUNCION PARA CARGAR LA FECHA
 Fecha fecha_entrenamiento (){
     Fecha reg;
-    cout<<"DIA: ";
-    cin>> reg.dia;
-    cout<<"MES: ";
-    cin>> reg.mes;
-    cout<<"ANIO: ";
-    cin>> reg.anio;
+    int x,y;
+           x=1;
+            y=3;
+            delline(y,APP_FORECOLOR,APP_BACKCOLOR);
+            locate(x,y);
+            cout<<"INGRESE LA FECHA DE ENTRENAMIENTO: "<<endl;
+            cin>>reg.dia;
+            locate(x+=2,y+1);
+            cin.ignore();
+            cout<<"/";
+            cin>>reg.mes;
+            locate(x+=3,y+1);
+            cin.ignore();
+            cout<<"/";
+            cin>>reg.anio;
+
     return reg;
 }
 //FUNCION PARA CONTAR LA CANT DE STRUCTS DE ENTRENAMIENTOS QUE TENEMOS EN ARCHIVO
@@ -176,38 +187,43 @@ void modificar_entrenamiento () {
     Entrenamiento reg;
     cout <<"INGRESAR ID DE ENTRENAMIENTO: ";
     cin>> id;
-    reg =leer_entrenamiento(id);
+    reg =leer_entrenamiento(id-1);
     mostrar_entrenamiento(reg);
     cout << endl;
     cout<<"-------------------------------------------"<<endl;
-    cout<<"Ingrese el tiempo en minutos";
+    cout<<"Ingrese el tiempo en minutos: ";
     cin>>reg.tiempo;
     while(reg.tiempo<1){
-             // delline(13,APP_FORECOLOR,APP_BACKCOLOR);
-             // locate(1,13);
+             delline(10,APP_FORECOLOR,APP_BACKCOLOR);
+             locate(1,10);
               cout<<"Error al ingresar los datos, vuelva a intentarlo."<<endl;
-              cout<<endl;
-              cout<<"Ingrese el tiempo en minutos";
+              cout<<"Ingrese el tiempo en minutos: ";
               cin>>reg.tiempo;
+              cout<<endl;
     }
     cout<<"Ingrese las calorias: ";
     cin>>reg.calorias;
     while (reg.calorias<1){
-              //  delline(13,APP_FORECOLOR,APP_BACKCOLOR);
-               // locate(1,13);
+              delline(12,APP_FORECOLOR,APP_BACKCOLOR);
+              locate(1,12);
               cout<<"Error al ingresar los datos, vuelva a intentarlo."<<endl;
-              cout<<endl;
+
               cout<<"Ingrese las calorias: ";
               cin>>reg.calorias;
                   }
-    bool grabo=guardar_modificacion_entrenamiento(reg,id);
+    bool grabo=guardar_modificacion_entrenamiento(reg,id-1);
     if (grabo){
+            delline(1,APP_FORECOLOR,APP_OKCOLOR);
+            locate(1,1);
             cout<<"Entrenamiento guardado correctamente."<<endl;
         }
     else{
-            cout<<endl<<endl<<"El entrenamiento no se guardó correctamente."<<endl;
+            delline(1,APP_FORECOLOR,APP_ERRORCOLOR);
+            locate(1,1);
+            cout<<"El entrenamiento no se guardó correctamente."<<endl;
         }
     anykey();
+    delline(1,APP_FORECOLOR,APP_BACKCOLOR);
     cls();
 }
 
@@ -274,7 +290,7 @@ bool validar_actividad(int ID_usuarios){
    fread(&reg, sizeof(Usuarios),1,P);
    apto=reg.Apto_medico;
    fclose(P);
-   cout<< apto;
+
    return apto;
 }
 //FUNCION PARA MOSTRAR LOS ENTRENAMIENTOS POR ID DE USUARIO
@@ -307,7 +323,9 @@ void Listar_entrenamientos_por_ID_Usuario (int id_usuario){
     }
     while (fread(&reg, sizeof(Entrenamiento), 1,F)==1){
         if(reg.ID_usuarios==id_usuario){
+                cout<<endl;
             mostrar_entrenamiento (reg);
+
           }
     }
     fclose(F);
