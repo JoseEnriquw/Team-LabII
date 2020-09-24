@@ -10,26 +10,30 @@
 using namespace std;
 using namespace rlutil;
 
+const char *fi_entrenamiento = "entrenamiento.dat" ;
+const char *fi_usuario="Archivo.dat";
+
 void realizar_backup (){
     cls();
     Usuarios *v_usuario;
     Entrenamiento *v_entrenamiento;
     int cant_usuario = cantidad_de_usuarios ();
     int cant_entre= cantidad_entrenamiento();
-    v_usuario = (Usuarios *) malloc(sizeof(Usuarios) * cant_usuario);
+    v_usuario = (Usuarios *) malloc(cant_usuario *sizeof(Usuarios));
     if (v_usuario == NULL){
         free(v_usuario);
         return;
     }
     FILE *P;
-    P=fopen ("usuarios.bkp", "ab");
+    P=fopen (fi_usuario, "rb");
     if (P==NULL){
          cout<<"Error en archivos";
          free(v_usuario);
          return;
     }
-    fwrite(&v_usuario, sizeof(Usuarios), 1, P);
-    fread(&v_usuario, sizeof(Usuarios), cant_usuario,P);
+
+    fread(v_usuario, sizeof(Usuarios), cant_usuario,P);
+    fclose(P);
     for (int i=0; i<cant_usuario; i++){
         mostrar_usuario (v_usuario[i]);
 
